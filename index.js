@@ -4,7 +4,17 @@ const returnFirstTwoDrivers = function (array) {
 };
 
 const returnLastTwoDrivers = function (list) {
-  const lastElement = list[list.length - 1];
-  const secondLast = list[list.length - 2];
-  return lastElement && secondLast;
+  return [list[list.length - 2], list[list.length - 1]];
 };
+
+const selectingDrivers = [returnFirstTwoDrivers, returnLastTwoDrivers];
+
+function createFareMultiplier(x) {
+  return (fare) => fare * x;
+}
+const fareDoubler = createFareMultiplier(2);
+const fareTripler = createFareMultiplier(3);
+
+function selectDifferentDrivers(drivers, cb) {
+  return cb(drivers);
+}
